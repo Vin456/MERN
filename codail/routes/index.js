@@ -1,9 +1,9 @@
 const express = require('express');
 const routes = express.Router();
-const homeController = require('../controllers/homeControllers');
+const homeController = require('../controllers/home-controllers');
 
-console.log('Routes was loaded');
 routes.get('/', homeController.home);
+routes.use('/users', require('./users'));
 
 
 module.exports = routes;
